@@ -42,7 +42,7 @@ typedef struct
 {
 	float coordinate[3];
 	float color[4];
-	float texel[2];
+	float texel[7];
 } Vertex;
 
 Vertex vertex[8];
@@ -85,7 +85,7 @@ GLuint	index,		//Index to draw
 //const string filename = "texture.tga";
 //const string filename = "cube.tga";
 
-const std::string filename = "texture.tga";
+const std::string filename = "cube.tga";;
 
 int width; //width of texture
 int height; //height of texture
@@ -148,45 +148,121 @@ void Game::initialize()
 	vertex[7].coordinate[1] = vertices[22];
 	vertex[7].coordinate[2] = vertices[23];
 
-	vertex[0].color[0] = 0.5f;
-	vertex[0].color[1] = 0.0f;
-	vertex[0].color[2] = 0.5f;
-	vertex[0].color[3] = 0.5f;
 
-	vertex[1].color[0] = 0.5f;
-	vertex[1].color[1] = 1.0f;
-	vertex[1].color[2] = 0.3f;
-	vertex[1].color[3] = 0.0f;
 
-	vertex[2].color[0] = 0.3f;
-	vertex[2].color[1] = 0.0f;
-	vertex[2].color[2] = 1.0f;
-	vertex[2].color[3] = 0.5f;
+	vertex[0].texel[0] = 0.5f;
+	vertex[0].texel[1] = 0.5f;
 
-	vertex[3].color[0] = 0.4f;
-	vertex[3].color[1] = 0.6f;
-	vertex[3].color[2] = 0.4f;
-	vertex[3].color[3] = 0.5f;
 
-	vertex[4].color[0] = 0.5f;
-	vertex[4].color[1] = 1.0f;
-	vertex[4].color[2] = 0.5f;
-	vertex[4].color[3] = 0.0f;
+	vertex[1].texel[0] = 1.0f;
+	vertex[1].texel[1] = 1.0f;
 
-	vertex[5].color[0] = 1.2f;
-	vertex[5].color[1] = 0.2f;
-	vertex[5].color[2] = 0.4f;
-	vertex[5].color[3] = 0.5f;
 
-	vertex[6].color[0] = 1.0f;
-	vertex[6].color[1] = 0.6f;
-	vertex[6].color[2] = 0.5f;
-	vertex[6].color[3] = 0.0f;
+	vertex[2].texel[0] = 0.5f;
+	vertex[2].texel[1] = 0.0f;
 
-	vertex[7].color[0] = 0.6f;
-	vertex[7].color[1] = 0.7f;
-	vertex[7].color[2] = 0.3f;
-	vertex[0].color[3] = 0.5f;
+	//vertex[3].texel[0] = vertex[3].coordinate[1];
+	//vertex[3].texel[1] = vertex[3].coordinate[2];
+
+	//vertex[4].texel[0] = vertex[4].coordinate[1];
+	//vertex[4].texel[1] = vertex[4].coordinate[2];
+
+	//vertex[5].texel[0] = vertex[5].coordinate[1];
+	//vertex[5].texel[1] = vertex[5].coordinate[2];
+
+	//vertex[6].texel[0] = vertex[6].coordinate[1];
+	//vertex[6].texel[1] = vertex[6].coordinate[2];
+
+	//vertex[7].texel[0] = vertex[7].coordinate[1];
+	//vertex[7].texel[1] = vertex[7].coordinate[2];
+
+	//vertex[8].texel[0] = vertex[8].coordinate[0];
+	//vertex[8].texel[1] = vertex[8].coordinate[1];
+
+	//vertex[9].texel[0] = vertex[9].coordinate[0];
+	//vertex[9].texel[1] = vertex[9].coordinate[1];
+
+	//vertex[10].texel[0] = vertex[10].coordinate[0];
+	//vertex[10].texel[1] = vertex[10].coordinate[1];
+
+	//vertex[11].texel[0] = vertex[11].coordinate[0];
+	//vertex[11].texel[1] = vertex[11].coordinate[1];
+
+	//vertex[12].texel[0] = vertex[12].coordinate[0];
+	//vertex[12].texel[1] = vertex[12].coordinate[1];
+
+	//vertex[13].texel[0] = vertex[13].coordinate[0];
+	//vertex[13].texel[1] = vertex[13].coordinate[1];
+
+	//vertex[14].texel[0] = vertex[14].coordinate[0];
+	//vertex[14].texel[1] = vertex[14].coordinate[1];
+
+	//vertex[15].texel[0] = vertex[15].coordinate[0];
+	//vertex[15].texel[1] = vertex[15].coordinate[1];
+
+	//vertex[16].texel[0] = vertex[16].coordinate[0];
+	//vertex[16].texel[1] = vertex[16].coordinate[1];
+
+	//vertex[17].texel[0] = vertex[17].coordinate[0];
+	//vertex[17].texel[1] = vertex[17].coordinate[1];
+
+	//vertex[18].texel[0] = vertex[18].coordinate[0];
+	//vertex[18].texel[1] = vertex[18].coordinate[1];
+
+	//vertex[19].texel[0] = vertex[19].coordinate[0];
+	//vertex[19].texel[1] = vertex[19].coordinate[1];
+
+	//vertex[20].texel[0] = vertex[20].coordinate[0];
+	//vertex[20].texel[1] = vertex[20].coordinate[1];
+
+	//vertex[21].texel[0] = vertex[21].coordinate[0];
+	//vertex[21].texel[1] = vertex[21].coordinate[1];
+
+	//vertex[22].texel[0] = vertex[22].coordinate[0];
+	//vertex[22].texel[1] = vertex[22].coordinate[1];
+
+	//vertex[23].texel[0] = vertex[23].coordinate[0];
+	//vertex[23].texel[1] = vertex[23].coordinate[1];
+
+	//vertex[0].color[0] = 0.5f;
+	//vertex[0].color[1] = 0.0f;
+	//vertex[0].color[2] = 0.5f;
+	//vertex[0].color[3] = 0.5f;
+
+	//vertex[1].color[0] = 0.5f;
+	//vertex[1].color[1] = 1.0f;
+	//vertex[1].color[2] = 0.3f;
+	//vertex[1].color[3] = 0.0f;
+
+	//vertex[2].color[0] = 0.3f;
+	//vertex[2].color[1] = 0.0f;
+	//vertex[2].color[2] = 1.0f;
+	//vertex[2].color[3] = 0.5f;
+
+	//vertex[3].color[0] = 0.4f;
+	//vertex[3].color[1] = 0.6f;
+	//vertex[3].color[2] = 0.4f;
+	//vertex[3].color[3] = 0.5f;
+
+	//vertex[4].color[0] = 0.5f;
+	//vertex[4].color[1] = 1.0f;
+	//vertex[4].color[2] = 0.5f;
+	//vertex[4].color[3] = 0.0f;
+
+	//vertex[5].color[0] = 1.2f;
+	//vertex[5].color[1] = 0.2f;
+	//vertex[5].color[2] = 0.4f;
+	//vertex[5].color[3] = 0.5f;
+
+	//vertex[6].color[0] = 1.0f;
+	//vertex[6].color[1] = 0.6f;
+	//vertex[6].color[2] = 0.5f;
+	//vertex[6].color[3] = 0.0f;
+
+	//vertex[7].color[0] = 0.6f;
+	//vertex[7].color[1] = 0.7f;
+	//vertex[7].color[2] = 0.3f;
+	//vertex[0].color[3] = 0.5f;
 
 	/*Index of Poly / Triangle to Draw */
 	triangles[0] = 0;   triangles[1] = 1;   triangles[2] = 2;
@@ -354,7 +430,7 @@ void Game::update()
 
 	if (flip)
 	{
-		rotationAngle += 0.005f;
+		//rotationAngle += 0.005f;
 
 		if (rotationAngle > 360.0f)
 		{
