@@ -42,10 +42,10 @@ typedef struct
 {
 	float coordinate[3];
 	float color[4];
-	float texel[7];
+	float texel[24];
 } Vertex;
 
-Vertex vertex[8];
+Vertex vertex[24];
 GLubyte triangles[36];
 
 float vertices[] = { -1.0f, -1.0f, 1.0f,
@@ -85,7 +85,7 @@ GLuint	index,		//Index to draw
 //const string filename = "texture.tga";
 //const string filename = "cube.tga";
 
-const std::string filename = "cube.tga";;
+const std::string filename = "cube.tga";
 
 int width; //width of texture
 int height; //height of texture
@@ -115,6 +115,8 @@ void Game::initialize()
 	DEBUG_MSG(glGetString(GL_VENDOR));
 	DEBUG_MSG(glGetString(GL_RENDERER));
 	DEBUG_MSG(glGetString(GL_VERSION));
+
+
 
 	vertex[0].coordinate[0] = vertices[0];
 	vertex[0].coordinate[1] = vertices[1];
@@ -150,79 +152,90 @@ void Game::initialize()
 
 
 
-	vertex[0].texel[0] = 0.5f;
-	vertex[0].texel[1] = 0.5f;
 
 
-	vertex[1].texel[0] = 1.0f;
-	vertex[1].texel[1] = 1.0f;
+
+	//front
+
+	vertex[0].texel[0] = 0.0f;
+	vertex[0].texel[1] = 0.25f;
+
+	vertex[1].texel[0] = 0.25f;
+	vertex[1].texel[1] = 0.25f;
+
+	vertex[2].texel[0] = 0.25f;
+	vertex[2].texel[1] = 0.5f;
+
+	vertex[3].texel[0] = 0.0f;
+	vertex[3].texel[1] = 0.5f;
+
+	//top
+
+	vertex[4].texel[0] = 0.25f;
+	vertex[4].texel[1] = 0.25f;
+
+	vertex[5].texel[0] = 0.5f;
+	vertex[5].texel[1] = 0.25f;
 
 
-	vertex[2].texel[0] = 0.5f;
-	vertex[2].texel[1] = 0.0f;
+	vertex[6].texel[0] = 0.5f;
+	vertex[6].texel[1] = 0.5f;
 
-	//vertex[3].texel[0] = vertex[3].coordinate[1];
-	//vertex[3].texel[1] = vertex[3].coordinate[2];
+	vertex[7].texel[0] = 0.25f;
+	vertex[7].texel[1] = 0.5f;
 
-	//vertex[4].texel[0] = vertex[4].coordinate[1];
-	//vertex[4].texel[1] = vertex[4].coordinate[2];
+	// back
 
-	//vertex[5].texel[0] = vertex[5].coordinate[1];
-	//vertex[5].texel[1] = vertex[5].coordinate[2];
+	//vertex[8].texel[0] = 0.5f;
+	//vertex[8].texel[1] = 0.25f;
 
-	//vertex[6].texel[0] = vertex[6].coordinate[1];
-	//vertex[6].texel[1] = vertex[6].coordinate[2];
+	//vertex[9].texel[0] = 0.75f;
+	//vertex[9].texel[1] = 0.25f;
 
-	//vertex[7].texel[0] = vertex[7].coordinate[1];
-	//vertex[7].texel[1] = vertex[7].coordinate[2];
+	//vertex[10].texel[0] = 0.75f;
+	//vertex[10].texel[1] = 0.5f;
 
-	//vertex[8].texel[0] = vertex[8].coordinate[0];
-	//vertex[8].texel[1] = vertex[8].coordinate[1];
+	//vertex[11].texel[0] = 0.5f;
+	//vertex[11].texel[1] = 0.5f;
 
-	//vertex[9].texel[0] = vertex[9].coordinate[0];
-	//vertex[9].texel[1] = vertex[9].coordinate[1];
 
-	//vertex[10].texel[0] = vertex[10].coordinate[0];
-	//vertex[10].texel[1] = vertex[10].coordinate[1];
+	//vertex[12].texel[0] = 0.75f;
+	//vertex[12].texel[1] = 0.75f;
 
-	//vertex[11].texel[0] = vertex[11].coordinate[0];
-	//vertex[11].texel[1] = vertex[11].coordinate[1];
+	//vertex[13].texel[0] = 0.75f;
+	//vertex[13].texel[1] = 0.75f;
 
-	//vertex[12].texel[0] = vertex[12].coordinate[0];
-	//vertex[12].texel[1] = vertex[12].coordinate[1];
+	//vertex[14].texel[0] = 0.75f;
+	//vertex[14].texel[1] = 0.75f;
 
-	//vertex[13].texel[0] = vertex[13].coordinate[0];
-	//vertex[13].texel[1] = vertex[13].coordinate[1];
+	//vertex[15].texel[0] = 0.75f;
+	//vertex[15].texel[1] = 0.75f;
 
-	//vertex[14].texel[0] = vertex[14].coordinate[0];
-	//vertex[14].texel[1] = vertex[14].coordinate[1];
+	/*
+	vertex[16].texel[0] = 0.75f;
+	vertex[16].texel[1] = 0.75f;
 
-	//vertex[15].texel[0] = vertex[15].coordinate[0];
-	//vertex[15].texel[1] = vertex[15].coordinate[1];
+	vertex[17].texel[0] = 0.75f;
+	vertex[17].texel[1] = 0.75f;
 
-	//vertex[16].texel[0] = vertex[16].coordinate[0];
-	//vertex[16].texel[1] = vertex[16].coordinate[1];
+	vertex[18].texel[0] = 0.75f;
+	vertex[18].texel[1] = 0.75f;
 
-	//vertex[17].texel[0] = vertex[17].coordinate[0];
-	//vertex[17].texel[1] = vertex[17].coordinate[1];
+	vertex[19].texel[0] = 0.75f;
+	vertex[19].texel[1] = 0.75f;
 
-	//vertex[18].texel[0] = vertex[18].coordinate[0];
-	//vertex[18].texel[1] = vertex[18].coordinate[1];
+	
+	vertex[20].texel[0] = 0.75f;
+	vertex[20].texel[1] = 0.75f;
 
-	//vertex[19].texel[0] = vertex[19].coordinate[0];
-	//vertex[19].texel[1] = vertex[19].coordinate[1];
+	vertex[21].texel[0] = 0.75f;
+	vertex[21].texel[1] = 0.75f;
+	
+	vertex[22].texel[0] = 0.75f;
+	vertex[22].texel[1] = 0.75f;
 
-	//vertex[20].texel[0] = vertex[20].coordinate[0];
-	//vertex[20].texel[1] = vertex[20].coordinate[1];
-
-	//vertex[21].texel[0] = vertex[21].coordinate[0];
-	//vertex[21].texel[1] = vertex[21].coordinate[1];
-
-	//vertex[22].texel[0] = vertex[22].coordinate[0];
-	//vertex[22].texel[1] = vertex[22].coordinate[1];
-
-	//vertex[23].texel[0] = vertex[23].coordinate[0];
-	//vertex[23].texel[1] = vertex[23].coordinate[1];
+	vertex[23].texel[0] = 0.75f;
+	vertex[23].texel[1] = 0.75f;*/
 
 	//vertex[0].color[0] = 0.5f;
 	//vertex[0].color[1] = 0.0f;
@@ -265,18 +278,32 @@ void Game::initialize()
 	//vertex[0].color[3] = 0.5f;
 
 	/*Index of Poly / Triangle to Draw */
-	triangles[0] = 0;   triangles[1] = 1;   triangles[2] = 2;
-	triangles[3] = 2;   triangles[4] = 3;   triangles[5] = 0;
-	triangles[6] = 2;   triangles[7] = 6;   triangles[8] = 3;
-	triangles[9] = 6;   triangles[10] = 7;   triangles[11] = 3;
+
+	// front
+	triangles[0] = 0;   triangles[1] = 1;   triangles[2] = 2; // 1
+	triangles[3] = 2;   triangles[4] = 3;   triangles[5] = 0; // 2
+
+	//
+	triangles[6] = 2;   triangles[7] = 6;   triangles[8] = 3; // 3
+	triangles[9] = 6;   triangles[10] = 7;   triangles[11] = 3; // 4
+
+	//
 	triangles[12] = 7;   triangles[13] = 6;   triangles[14] = 5;
 	triangles[15] = 5;   triangles[16] = 4;   triangles[17] = 7;
+	
+	//
 	triangles[18] = 5;   triangles[19] = 0;   triangles[20] = 4;
 	triangles[21] = 5;   triangles[22] = 1;   triangles[23] = 0;
+	
+	//
 	triangles[24] = 1;   triangles[25] = 5;   triangles[26] = 6;
 	triangles[27] = 6;   triangles[28] = 2;   triangles[29] = 1;
+
+	//
 	triangles[30] = 4;   triangles[31] = 0;   triangles[32] = 3;
 	triangles[33] = 3;   triangles[34] = 7;   triangles[35] = 4;
+
+
 	/* Create a new VBO using VBO id */
 	glGenBuffers(1, &vbo);
 
@@ -284,7 +311,7 @@ void Game::initialize()
 	glBindBuffer(GL_ARRAY_BUFFER, vbo);
 
 	/* Upload vertex data to GPU */
-	glBufferData(GL_ARRAY_BUFFER, sizeof(Vertex) * 36, vertex, GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(Vertex) * 24, vertex, GL_STATIC_DRAW);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 
 	glGenBuffers(1, &index);
