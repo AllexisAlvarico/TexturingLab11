@@ -101,11 +101,11 @@ void Game::initialize()
 	{
 		m_points[i] = Matrix3f::scale3D(50) * m_points[i];
 	}
-	glTranslated(0.0f, 0.0f, -8.0f);
-	glMatrixMode(GL_PROJECTION);
-	glLoadIdentity();
-	gluPerspective(45.0, window.getSize().x / window.getSize().y, 1.0, 500.0);
-	glMatrixMode(GL_MODELVIEW);
+	//glTranslated(0.0f, 0.0f, -8.0f);
+	//glMatrixMode(GL_PROJECTION);
+	//glLoadIdentity();
+	//gluPerspective(45.0, window.getSize().x / window.getSize().y, 1.0, 500.0);
+	//glMatrixMode(GL_MODELVIEW);
 	glEnable(GL_CULL_FACE);
 	GLint isCompiled = 0;
 	GLint isLinked = 0;
@@ -116,40 +116,101 @@ void Game::initialize()
 	DEBUG_MSG(glGetString(GL_RENDERER));
 	DEBUG_MSG(glGetString(GL_VERSION));
 
+	vertex[0].coordinate[0] = vertices[0];
+	vertex[0].coordinate[1] = vertices[1];
+	vertex[0].coordinate[2] = vertices[2];
 
+	vertex[1].coordinate[0] = vertices[3];
+	vertex[1].coordinate[1] = vertices[4];
+	vertex[1].coordinate[2] = vertices[5];
 
-	//vertex[0].coordinate[0] = vertices[0];
-	//vertex[0].coordinate[1] = vertices[1];
-	//vertex[0].coordinate[2] = vertices[2];
+	vertex[2].coordinate[0] = vertices[6];
+	vertex[2].coordinate[1] = vertices[7];
+	vertex[2].coordinate[2] = vertices[8];
 
-	//vertex[1].coordinate[0] = vertices[3];
-	//vertex[1].coordinate[1] = vertices[4];
-	//vertex[1].coordinate[2] = vertices[5];
+	vertex[3].coordinate[0] = vertices[9];
+	vertex[3].coordinate[1] = vertices[10];
+	vertex[3].coordinate[2] = vertices[11];
 
-	//vertex[2].coordinate[0] = vertices[6];
-	//vertex[2].coordinate[1] = vertices[7];
-	//vertex[2].coordinate[2] = vertices[8];
+	vertex[4].coordinate[0] = vertices[12];
+	vertex[4].coordinate[1] = vertices[13];
+	vertex[4].coordinate[2] = vertices[14];
 
-	//vertex[3].coordinate[0] = vertices[9];
-	//vertex[3].coordinate[1] = vertices[10];
-	//vertex[3].coordinate[2] = vertices[11];
+	vertex[5].coordinate[0] = vertices[15];
+	vertex[5].coordinate[1] = vertices[16];
+	vertex[5].coordinate[2] = vertices[17];
 
-	//vertex[4].coordinate[0] = vertices[12];
-	//vertex[4].coordinate[1] = vertices[13];
-	//vertex[4].coordinate[2] = vertices[14];
+	vertex[6].coordinate[0] = vertices[18];
+	vertex[6].coordinate[1] = vertices[19];
+	vertex[6].coordinate[2] = vertices[20];
 
-	//vertex[5].coordinate[0] = vertices[15];
-	//vertex[5].coordinate[1] = vertices[16];
-	//vertex[5].coordinate[2] = vertices[17];
+	vertex[7].coordinate[0] = vertices[21];
+	vertex[7].coordinate[1] = vertices[22];
+	vertex[7].coordinate[2] = vertices[23];
 
-	//vertex[6].coordinate[0] = vertices[18];
-	//vertex[6].coordinate[1] = vertices[19];
-	//vertex[6].coordinate[2] = vertices[20];
+	vertex[8].coordinate[0] = vertices[0];
+	vertex[8].coordinate[1] = vertices[1];
+	vertex[8].coordinate[2] = vertices[2];
 
-	//vertex[7].coordinate[0] = vertices[21];
-	//vertex[7].coordinate[1] = vertices[22];
-	//vertex[7].coordinate[2] = vertices[23];
+	vertex[9].coordinate[0] = vertices[3];
+	vertex[9].coordinate[1] = vertices[4];
+	vertex[9].coordinate[2] = vertices[5];
 
+	vertex[10].coordinate[0] = vertices[6];
+	vertex[10].coordinate[1] = vertices[7];
+	vertex[10].coordinate[2] = vertices[8];
+
+	vertex[11].coordinate[0] = vertices[9];
+	vertex[11].coordinate[1] = vertices[10];
+	vertex[11].coordinate[2] = vertices[11];
+
+	vertex[12].coordinate[0] = vertices[12];
+	vertex[12].coordinate[1] = vertices[13];
+	vertex[12].coordinate[2] = vertices[14];
+
+	vertex[13].coordinate[0] = vertices[15];
+	vertex[13].coordinate[1] = vertices[16];
+	vertex[13].coordinate[2] = vertices[17];
+
+	vertex[14].coordinate[0] = vertices[18];
+	vertex[14].coordinate[1] = vertices[19];
+	vertex[14].coordinate[2] = vertices[20];
+
+	vertex[15].coordinate[0] = vertices[21];
+	vertex[15].coordinate[1] = vertices[22];
+	vertex[15].coordinate[2] = vertices[23];
+
+	vertex[16].coordinate[0] = vertices[0];
+	vertex[16].coordinate[1] = vertices[1];
+	vertex[16].coordinate[2] = vertices[2];
+
+	vertex[17].coordinate[0] = vertices[3];
+	vertex[17].coordinate[1] = vertices[4];
+	vertex[17].coordinate[2] = vertices[5];
+
+	vertex[18].coordinate[0] = vertices[6];
+	vertex[18].coordinate[1] = vertices[7];
+	vertex[18].coordinate[2] = vertices[8];
+
+	vertex[19].coordinate[0] = vertices[9];
+	vertex[19].coordinate[1] = vertices[10];
+	vertex[19].coordinate[2] = vertices[11];
+
+	vertex[20].coordinate[0] = vertices[12];
+	vertex[20].coordinate[1] = vertices[13];
+	vertex[20].coordinate[2] = vertices[14];
+
+	vertex[21].coordinate[0] = vertices[15];
+	vertex[21].coordinate[1] = vertices[16];
+	vertex[21].coordinate[2] = vertices[17];
+
+	vertex[22].coordinate[0] = vertices[18];
+	vertex[22].coordinate[1] = vertices[19];
+	vertex[22].coordinate[2] = vertices[20];
+
+	vertex[23].coordinate[0] = vertices[21];
+	vertex[23].coordinate[1] = vertices[22];
+	vertex[23].coordinate[2] = vertices[23];
 
 
 
@@ -186,17 +247,17 @@ void Game::initialize()
 
 	// 
 
-	vertex[8].texel[0] = 0.25f;
-	vertex[8].texel[1] = 0.75f;
+	//vertex[8].texel[0] = 0.25f;
+	//vertex[8].texel[1] = 0.75f;
 
-	vertex[9].texel[0] = 1.0f;
-	vertex[9].texel[1] = 0.25f;
+	//vertex[9].texel[0] = 1.0f;
+	//vertex[9].texel[1] = 0.25f;
 
-	vertex[10].texel[0] = 1.0f;
-	vertex[10].texel[1] = 0.5f;
+	//vertex[10].texel[0] = 1.0f;
+	//vertex[10].texel[1] = 0.5f;
 
-	vertex[11].texel[0] = 0.75f;
-	vertex[11].texel[1] = 0.5f;
+	//vertex[11].texel[0] = 0.75f;
+	//vertex[11].texel[1] = 0.5f;
 
 	////
 	//vertex[12].texel[0] = 0.25f;
@@ -428,7 +489,7 @@ void Game::update()
 
 
 	cubeRotation();
-	//unload();
+
 
 	//Change vertex data
 	//vertex[0].coordinate[0] += -0.0001f;
