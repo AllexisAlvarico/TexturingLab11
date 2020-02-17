@@ -48,14 +48,14 @@ typedef struct
 Vertex vertex[24];
 GLubyte triangles[36];
 
-float vertices[] = { -1.0f, -1.0f, 1.0f,
-						1.0f, -1.0f, 1.0f,
-						1.0f, 1.0f, 1.0f,
-						-1.0f, 1.0f, 1.0f,
-						-1.0f, -1.0f, -1.0f,
-						1.0f, -1.0f, -1.0f,
-						1.0f, 1.0f, -1.0f,
-						-1.0f, 1.0f, -1.0f };
+float vertices[] = { -0.5f, -0.5f, 0.5f,
+						0.5f, -0.5f, 0.5f,
+						0.5f, 0.5f, 0.5f,
+						-0.5f, 0.5f, 0.5f,
+						-0.5f, -0.5f, -0.5f,
+						0.5f, -0.5f, -0.5f,
+						0.5f, 0.5f, -0.5f,
+						-0.5f, 0.5f, -0.5f };
 
 Vector3f m_points[] = { {vertices[0],vertices[1],vertices[2] },
 						{vertices[3],vertices[4],vertices[5] },
@@ -118,37 +118,37 @@ void Game::initialize()
 
 
 
-	vertex[0].coordinate[0] = vertices[0];
-	vertex[0].coordinate[1] = vertices[1];
-	vertex[0].coordinate[2] = vertices[2];
+	//vertex[0].coordinate[0] = vertices[0];
+	//vertex[0].coordinate[1] = vertices[1];
+	//vertex[0].coordinate[2] = vertices[2];
 
-	vertex[1].coordinate[0] = vertices[3];
-	vertex[1].coordinate[1] = vertices[4];
-	vertex[1].coordinate[2] = vertices[5];
+	//vertex[1].coordinate[0] = vertices[3];
+	//vertex[1].coordinate[1] = vertices[4];
+	//vertex[1].coordinate[2] = vertices[5];
 
-	vertex[2].coordinate[0] = vertices[6];
-	vertex[2].coordinate[1] = vertices[7];
-	vertex[2].coordinate[2] = vertices[8];
+	//vertex[2].coordinate[0] = vertices[6];
+	//vertex[2].coordinate[1] = vertices[7];
+	//vertex[2].coordinate[2] = vertices[8];
 
-	vertex[3].coordinate[0] = vertices[9];
-	vertex[3].coordinate[1] = vertices[10];
-	vertex[3].coordinate[2] = vertices[11];
+	//vertex[3].coordinate[0] = vertices[9];
+	//vertex[3].coordinate[1] = vertices[10];
+	//vertex[3].coordinate[2] = vertices[11];
 
-	vertex[4].coordinate[0] = vertices[12];
-	vertex[4].coordinate[1] = vertices[13];
-	vertex[4].coordinate[2] = vertices[14];
+	//vertex[4].coordinate[0] = vertices[12];
+	//vertex[4].coordinate[1] = vertices[13];
+	//vertex[4].coordinate[2] = vertices[14];
 
-	vertex[5].coordinate[0] = vertices[15];
-	vertex[5].coordinate[1] = vertices[16];
-	vertex[5].coordinate[2] = vertices[17];
+	//vertex[5].coordinate[0] = vertices[15];
+	//vertex[5].coordinate[1] = vertices[16];
+	//vertex[5].coordinate[2] = vertices[17];
 
-	vertex[6].coordinate[0] = vertices[18];
-	vertex[6].coordinate[1] = vertices[19];
-	vertex[6].coordinate[2] = vertices[20];
+	//vertex[6].coordinate[0] = vertices[18];
+	//vertex[6].coordinate[1] = vertices[19];
+	//vertex[6].coordinate[2] = vertices[20];
 
-	vertex[7].coordinate[0] = vertices[21];
-	vertex[7].coordinate[1] = vertices[22];
-	vertex[7].coordinate[2] = vertices[23];
+	//vertex[7].coordinate[0] = vertices[21];
+	//vertex[7].coordinate[1] = vertices[22];
+	//vertex[7].coordinate[2] = vertices[23];
 
 
 
@@ -157,126 +157,87 @@ void Game::initialize()
 
 	//front
 
-	vertex[0].texel[0] = 0.0f;
+	vertex[0].texel[0] = 0.25f;
 	vertex[0].texel[1] = 0.25f;
 
-	vertex[1].texel[0] = 0.25f;
+	vertex[1].texel[0] = 0.5f;
 	vertex[1].texel[1] = 0.25f;
 
-	vertex[2].texel[0] = 0.25f;
+	vertex[2].texel[0] = 0.5f;
 	vertex[2].texel[1] = 0.5f;
 
-	vertex[3].texel[0] = 0.0f;
+	vertex[3].texel[0] = 0.25f;
 	vertex[3].texel[1] = 0.5f;
 
-	//top
+	//back
 
-	vertex[4].texel[0] = 0.25f;
+	vertex[4].texel[0] = 0.75f;
 	vertex[4].texel[1] = 0.25f;
 
-	vertex[5].texel[0] = 0.5f;
+	vertex[5].texel[0] = 1.0f;
 	vertex[5].texel[1] = 0.25f;
 
 
-	vertex[6].texel[0] = 0.5f;
+	vertex[6].texel[0] = 1.0f;
 	vertex[6].texel[1] = 0.5f;
 
-	vertex[7].texel[0] = 0.25f;
+	vertex[7].texel[0] = 0.75f;
 	vertex[7].texel[1] = 0.5f;
 
-	// back
+	// 
 
-	//vertex[8].texel[0] = 0.5f;
-	//vertex[8].texel[1] = 0.25f;
+	vertex[8].texel[0] = 0.25f;
+	vertex[8].texel[1] = 0.75f;
 
-	//vertex[9].texel[0] = 0.75f;
-	//vertex[9].texel[1] = 0.25f;
+	vertex[9].texel[0] = 1.0f;
+	vertex[9].texel[1] = 0.25f;
 
-	//vertex[10].texel[0] = 0.75f;
-	//vertex[10].texel[1] = 0.5f;
+	vertex[10].texel[0] = 1.0f;
+	vertex[10].texel[1] = 0.5f;
 
-	//vertex[11].texel[0] = 0.5f;
-	//vertex[11].texel[1] = 0.5f;
+	vertex[11].texel[0] = 0.75f;
+	vertex[11].texel[1] = 0.5f;
 
-
-	//vertex[12].texel[0] = 0.75f;
+	////
+	//vertex[12].texel[0] = 0.25f;
 	//vertex[12].texel[1] = 0.75f;
 
-	//vertex[13].texel[0] = 0.75f;
-	//vertex[13].texel[1] = 0.75f;
+	//vertex[13].texel[0] = 1.0f;
+	//vertex[13].texel[1] = 0.25f;
 
-	//vertex[14].texel[0] = 0.75f;
-	//vertex[14].texel[1] = 0.75f;
+	//vertex[14].texel[0] = 1.0f;
+	//vertex[14].texel[1] = 0.5f;
 
 	//vertex[15].texel[0] = 0.75f;
-	//vertex[15].texel[1] = 0.75f;
+	//vertex[15].texel[1] = 0.5f;
 
-	/*
-	vertex[16].texel[0] = 0.75f;
-	vertex[16].texel[1] = 0.75f;
+	////
+	//vertex[16].texel[0] = 0.75f;
+	//vertex[16].texel[1] = 0.75f;
 
-	vertex[17].texel[0] = 0.75f;
-	vertex[17].texel[1] = 0.75f;
+	//vertex[17].texel[0] = 0.75f;
+	//vertex[17].texel[1] = 0.75f;
 
-	vertex[18].texel[0] = 0.75f;
-	vertex[18].texel[1] = 0.75f;
+	//vertex[18].texel[0] = 0.75f;
+	//vertex[18].texel[1] = 0.75f;
 
-	vertex[19].texel[0] = 0.75f;
-	vertex[19].texel[1] = 0.75f;
+	//vertex[19].texel[0] = 0.75f;
+	//vertex[19].texel[1] = 0.75f;
+
+	////
+	//vertex[20].texel[0] = 0.75f;
+	//vertex[20].texel[1] = 0.75f;
+
+	//vertex[21].texel[0] = 0.75f;
+	//vertex[21].texel[1] = 0.75f;
+	//
+	//vertex[22].texel[0] = 0.75f;
+	//vertex[22].texel[1] = 0.75f;
+
+	//vertex[23].texel[0] = 0.75f;
+	//vertex[23].texel[1] = 0.75f;
 
 	
-	vertex[20].texel[0] = 0.75f;
-	vertex[20].texel[1] = 0.75f;
-
-	vertex[21].texel[0] = 0.75f;
-	vertex[21].texel[1] = 0.75f;
-	
-	vertex[22].texel[0] = 0.75f;
-	vertex[22].texel[1] = 0.75f;
-
-	vertex[23].texel[0] = 0.75f;
-	vertex[23].texel[1] = 0.75f;*/
-
-	//vertex[0].color[0] = 0.5f;
-	//vertex[0].color[1] = 0.0f;
-	//vertex[0].color[2] = 0.5f;
-	//vertex[0].color[3] = 0.5f;
-
-	//vertex[1].color[0] = 0.5f;
-	//vertex[1].color[1] = 1.0f;
-	//vertex[1].color[2] = 0.3f;
-	//vertex[1].color[3] = 0.0f;
-
-	//vertex[2].color[0] = 0.3f;
-	//vertex[2].color[1] = 0.0f;
-	//vertex[2].color[2] = 1.0f;
-	//vertex[2].color[3] = 0.5f;
-
-	//vertex[3].color[0] = 0.4f;
-	//vertex[3].color[1] = 0.6f;
-	//vertex[3].color[2] = 0.4f;
-	//vertex[3].color[3] = 0.5f;
-
-	//vertex[4].color[0] = 0.5f;
-	//vertex[4].color[1] = 1.0f;
-	//vertex[4].color[2] = 0.5f;
-	//vertex[4].color[3] = 0.0f;
-
-	//vertex[5].color[0] = 1.2f;
-	//vertex[5].color[1] = 0.2f;
-	//vertex[5].color[2] = 0.4f;
-	//vertex[5].color[3] = 0.5f;
-
-	//vertex[6].color[0] = 1.0f;
-	//vertex[6].color[1] = 0.6f;
-	//vertex[6].color[2] = 0.5f;
-	//vertex[6].color[3] = 0.0f;
-
-	//vertex[7].color[0] = 0.6f;
-	//vertex[7].color[1] = 0.7f;
-	//vertex[7].color[2] = 0.3f;
-	//vertex[0].color[3] = 0.5f;
-
 	/*Index of Poly / Triangle to Draw */
 
 	// front
